@@ -1,0 +1,29 @@
+---
+title: "Untitled"
+latex-tinytex: false
+format:
+    html:
+        code-fold: show
+    docx: default
+    pdf: default
+---
+
+# Clean data
+
+First we need to remove race.
+
+```{python}
+import pandas as pd
+df = pd.read_csv('lending_train.csv',index_col=0,)
+df = df.drop(columns='race')
+for column in list(df.columns):
+    print(column, df.loc[:,column].dtype)
+display(df.head(3).iloc[:,4:])
+```
+
+# Describe data
+
+## 
+```{python}
+
+```
